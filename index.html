@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel ='preconnect' href ="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400&display=swap" rel="stylesheet">
+
+
+
+<style>
+    body{
+        margin: 0;
+        background: #000; /*this is be put if the pic doesnt load*/
+    }
+
+    .menu {
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        display: flex;
+        flex-direction: column-reverse; /*first button at bottom*/
+        gap: 10px;
+        z-index: 5;
+    }
+
+    .menu button {
+        font-family: "Great Vibes", cursive;
+        background: #120f0c;
+        color: #f2e8d5;
+        border: 1px solid #3b3126;
+        padding: 8px 22px;
+        min-width: 120px;
+        text-align: left;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    
+    }
+
+
+    .menu button:hover,
+    .menu button:focus-visible {
+        border-color: #c9a24d;
+        color: #c9a24d;
+        outline: none;
+
+
+    }
+
+    .overlay { /*the box of info*/
+        position: fixed;
+        padding: 20px;
+        
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none; /* Hide the overlay by default */
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+    .overlay.open {
+        display: flex; /* Show the overlay when open */
+    }
+
+    .box {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        background: #120f0c;
+        color: #f2e8d5;
+        padding: 32px;
+        border: 1px solid #3b3126;
+
+    }
+
+    .box h2 {
+        font-family: "Great Vibes", cursive;
+        font-size: 2.2rem;
+        margin: 0 0 12px;
+        font-weight: 400;
+    }
+
+    .box p {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.7;
+    }
+
+    .close{
+        position: absolute;
+        top: 8px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: #f2e8d5;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+    .hottie {
+        height: 100vh; /*the gradient of shade black will on top*/
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
+        url("ec159d11d2ce77743781bdfaba82600a.jpg");
+
+        background-size: cover;
+        background-position: center;
+
+        /*this stuff will center the text*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+        color: #f2e8d5;}
+
+    .hottie h1 {
+        font-family: 'Great Vibes', cursive;
+        font-weight: 400;
+        font-size: clamp(2.5rem, 7vw, 4.5rem);
+        letter-spacing: 0.03em;
+        margin: 0;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+    .hottie p {
+        font-family: 'Cinzel', serif;
+       
+        font-size: 0.95rem;
+        margin: 12px 0 0;
+        letter-spacing: 0.2em;
+    }
+</style>
+</head>
+<body>
+<section class="hottie">
+    <div>
+        <h1>Tristan "Predator" Caine</h1>
+        <p>The darkness isn't something you run from; it's something you embrace...</p>
+    </div>
+</section>
+<nav class="menu">
+    <button data-overlay="about">About</button>
+    <button data-overlay="family">Family</button>
+    <button data-overlay="personality">Personality</button>
+    <button data-overlay="likes">What I Like About Him</button>
+</nav>
+
+<div class="overlay" id="overlay">
+    <div class="box">
+        <button class="close" id="close" aria-label="Close">&times;</button>
+
+        <div class="content" id="about" hidden>
+            <h2>About</h2>
+            <p>Tristan "Predator" Caine is a mysterious and enigmatic figure, known for his stealth and cunning. He thrives in the shadows, using his skills to navigate complex situations with ease. His presence commands respect and intrigue, making him a formidable force in any scenario.</p>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
+   
